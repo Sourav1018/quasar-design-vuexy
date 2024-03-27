@@ -1,1 +1,10 @@
 // app global css in SCSS form
+@import "custom.variables.scss";
+
+.custom-background-color {
+  background-color: $custom-background-color;
+}
+
+.custom-icon-color {
+  color: $custom-icon-color;
+}
