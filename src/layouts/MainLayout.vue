@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header
-      class="app-header q-mx-md q-mt-md shadow-4 custom-background-color"
+      class="app-header q-mx-md q-my-md shadow-4 custom-background-color"
     >
       <q-toolbar>
         <q-btn
