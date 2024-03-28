@@ -8,3 +8,19 @@
 .custom-icon-color {
   color: $custom-icon-color;
 }
+
+.flex-spacebetween {
+  justify-content: space-between;
+}
+
+.custom-text-grey {
+  color: $custom-text-grey;
+}
+
+.search-text:hover {
+  cursor: pointer;
+}
+
+.search-container {
+  gap: 0.5rem;
+}

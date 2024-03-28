@@ -3,22 +3,39 @@
     <q-header
       class="app-header q-mx-md q-my-md shadow-4 custom-background-color"
     >
-      <q-toolbar>
-        <q-btn
-          class="custom-icon-color"
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title> Quasar App </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+      <q-toolbar class="justify-between">
+        <div class="row">
+          <q-btn
+            class="custom-icon-color"
+            flat
+            dense
+            round
+            icon="menu"
+            aria-label="Menu"
+            @click="toggleLeftDrawer"
+          />
+          <div class="row items-center search-container">
+            <q-btn class="custom-icon-color" flat dense round icon="search" />
+            <div class="custom-text-grey search-text text-capitalize">
+              search
+            </div>
+          </div>
+        </div>
+        <div>
+          <q-btn round dense flat>
+            <q-avatar rounded size="2rem">
+              <img
+                src="../assets/static/profile-circle-icon-512x512-dt9lf8um.png"
+              />
+            </q-avatar>
+          </q-btn>
+        </div>
       </q-toolbar>
     </q-header>
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above class="shadow-4">
       <q-list>
@@ -31,10 +48,6 @@
         />
       </q-list>
     </q-drawer>
-
-    <q-page-container>
-      <router-view />
-    </q-page-container>
   </q-layout>
 </template>
 
