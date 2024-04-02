@@ -28,6 +28,7 @@
                 src="../assets/static/profile-circle-icon-512x512-dt9lf8um.png"
               />
             </q-avatar>
+            <ProfileIconMenu />
           </q-btn>
         </div>
       </q-toolbar>
@@ -37,15 +38,24 @@
       <router-view />
     </q-page-container>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above class="shadow-4">
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      class="shadow-4"
+      width="240"
+    >
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-
-        <EssentialLink
+        <q-item-label header>
+          <q-avatar class="full-width" square>
+            <q-img src="../assets/static/company-logo.png" />
+          </q-avatar>
+        </q-item-label>
+        <MenuAccordion />
+        <!-- <EssentialLink
           v-for="link in linksList"
           :key="link.title"
           v-bind="link"
-        />
+        /> -->
       </q-list>
     </q-drawer>
   </q-layout>
@@ -54,6 +64,8 @@
 <script>
 import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
+import ProfileIconMenu from "components/ProfileIconMenu.vue";
+import MenuAccordion from "components/MenuAccordion.vue";
 
 const linksList = [
   {
@@ -104,7 +116,9 @@ export default defineComponent({
   name: "MainLayout",
 
   components: {
-    EssentialLink,
+    // EssentialLink,
+    ProfileIconMenu,
+    MenuAccordion,
   },
 
   setup() {

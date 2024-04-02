@@ -1,5 +1,18 @@
 // app global css in SCSS form
 @import "custom.variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.text-color__custome-grey {
+  color: $font-color;
+}
+
+.montserrat-font {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
 
 .custom-background-color {
   background-color: $custom-background-color;
@@ -23,4 +36,23 @@
 
 .search-container {
   gap: 0.5rem;
+}
+.gap-1 {
+  gap: 0.5rem;
+}
+.profile_menu_icon_color {
+  color: $profile-menu-icon-color;
+}
+
+.base-line-align {
+  vertical-align: baseline;
+}
+
+.logout-button-color {
+  background-color: $profile-logout-button-color;
+  color: #fff;
+}
+
+.reset-line-height {
+  line-height: 0;
 }
