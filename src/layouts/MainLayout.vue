@@ -50,7 +50,9 @@
             <q-img src="../assets/static/company-logo.png" />
           </q-avatar>
         </q-item-label>
-        <MenuAccordion />
+        <q-item class="q-pa-none q-ma-none">
+          <MenuAccordion />
+        </q-item>
         <!-- <EssentialLink
           v-for="link in linksList"
           :key="link.title"

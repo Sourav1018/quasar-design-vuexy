@@ -7,11 +7,17 @@
           <q-expansion-item
             icon="fact_check"
             label="Attendance"
-            class="hover-expansion__sidebar-menu sidebar-accordion"
+            class="sidebar-accordion"
           >
             <q-list>
               <q-item>
-                <q-item-section>In/Out </q-item-section>
+                <q-item-section>In/Out</q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>Holidays</q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>Leave Apply</q-item-section>
               </q-item>
             </q-list>
           </q-expansion-item>
@@ -21,7 +27,7 @@
   </q-list>
 </template>
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 export default {
   setup() {
@@ -36,23 +42,20 @@ export default {
   transform: translateX(0);
   font-size: 0.5rem;
 }
-.sidebar-accordion:hover::v-deep .q-item__section--avatar {
-  transition: transform 0.3s ease;
-  transform: translateX(3px);
-}
 
 .menu-font__size {
   font-size: 1rem;
   font-weight: 400;
 }
-/* Hover in animation */
-.hover-expansion__sidebar-menu:hover::v-deep .q-item__label {
-  transition: transform 0.3s ease;
-  transform: translateX(3px);
-}
-/* Hover out animation */
-.hover-expansion__sidebar-menu::v-deep .q-item__label {
+
+.sidebar-accordion::v-deep .q-item__label {
   transition: transform 0.3s ease;
   transform: translateX(0);
+}
+
+.sidebar-accordion::v-deep .q-item:hover .q-item__label,
+.sidebar-accordion::v-deep .q-item:hover .q-item__section--avatar {
+  transition: transform 0.3s ease;
+  transform: translateX(3px);
 }
 </style>
