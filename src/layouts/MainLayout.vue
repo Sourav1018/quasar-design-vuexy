@@ -50,8 +50,12 @@
             <q-img src="../assets/static/company-logo.png" />
           </q-avatar>
         </q-item-label>
-        <q-item class="q-pa-none q-ma-none">
-          <MenuAccordion />
+        <q-item
+          class="q-pa-none q-ma-none"
+          v-for="(accordion, index) in accordionList"
+          :key="index"
+        >
+          <MenuAccordion v-bind="accordion" />
         </q-item>
         <!-- <EssentialLink
           v-for="link in linksList"
@@ -114,6 +118,55 @@ const linksList = [
   },
 ];
 
+const accordionList = [
+  {
+    section: "apps and pages",
+    expantions: [
+      {
+        icon: "fact_check",
+        label: "Attendance",
+        items: [
+          {
+            icon: "circle",
+            label: "In/Out",
+          },
+          {
+            icon: "circle",
+            label: "Holidays",
+          },
+          {
+            icon: "circle",
+            label: "Leave Apply",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    section: "others",
+    expantions: [
+      {
+        icon: "fact_check",
+        label: "Attendance",
+        items: [
+          {
+            icon: "circle",
+            label: "In/Out",
+          },
+          {
+            icon: "circle",
+            label: "Holidays",
+          },
+          {
+            icon: "circle",
+            label: "Leave Apply",
+          },
+        ],
+      },
+    ],
+  },
+];
+
 export default defineComponent({
   name: "MainLayout",
 
@@ -127,6 +180,7 @@ export default defineComponent({
     const leftDrawerOpen = ref(false);
 
     return {
+      accordionList,
       linksList,
       leftDrawerOpen,
       toggleLeftDrawer() {
