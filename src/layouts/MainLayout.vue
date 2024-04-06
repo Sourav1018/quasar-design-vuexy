@@ -71,7 +71,7 @@
 import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import ProfileIconMenu from "components/ProfileIconMenu.vue";
-import MenuAccordion from "components/MenuAccordion.vue";
+import MenuAccordion from "components/menuaccordion/MenuAccordion.vue";
 
 const linksList = [
   {
@@ -121,22 +121,36 @@ const linksList = [
 const accordionList = [
   {
     section: "apps and pages",
-    expantions: [
+    expansions: [
       {
-        icon: "fact_check",
+        icon: "mdi-calendar-clock-outline",
         label: "Attendance",
         items: [
           {
-            icon: "circle",
-            label: "In/Out",
+            icon: "mdi-circle-outline",
+            label: "In & Out",
           },
           {
-            icon: "circle",
+            icon: "mdi-circle-outline",
             label: "Holidays",
           },
           {
-            icon: "circle",
+            icon: "mdi-circle-outline",
             label: "Leave Apply",
+          },
+        ],
+      },
+      {
+        icon: "mdi-list-box-outline",
+        label: "Tasks",
+        items: [
+          {
+            icon: "mdi-circle-outline",
+            label: "todo",
+          },
+          {
+            icon: "mdi-circle-outline",
+            label: "project tasks",
           },
         ],
       },
@@ -144,21 +158,21 @@ const accordionList = [
   },
   {
     section: "others",
-    expantions: [
+    expansions: [
       {
         icon: "fact_check",
         label: "Attendance",
         items: [
           {
-            icon: "circle",
+            icon: "mdi-circle-outline",
             label: "In/Out",
           },
           {
-            icon: "circle",
+            icon: "mdi-circle-outline",
             label: "Holidays",
           },
           {
-            icon: "circle",
+            icon: "mdi-circle-outline",
             label: "Leave Apply",
           },
         ],
