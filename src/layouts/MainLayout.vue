@@ -33,8 +33,7 @@
         </div>
       </q-toolbar>
     </q-header>
-
-    <q-page-container>
+    <q-page-container class="custom-container-padding-top">
       <router-view />
     </q-page-container>
 
@@ -129,14 +128,23 @@ const accordionList = [
           {
             icon: "mdi-circle-outline",
             label: "In & Out",
+            to: {
+              name: "attendance.checkInOut",
+            },
           },
           {
             icon: "mdi-circle-outline",
             label: "Holidays",
+            to: {
+              name: "attendance.holidaysView",
+            },
           },
           {
             icon: "mdi-circle-outline",
             label: "Leave Apply",
+            to: {
+              name: "attendance.applyLeave",
+            },
           },
         ],
       },
@@ -147,10 +155,12 @@ const accordionList = [
           {
             icon: "mdi-circle-outline",
             label: "todo",
+            to: "/chek-in-and-check-out",
           },
           {
             icon: "mdi-circle-outline",
             label: "project tasks",
+            to: "/chek-in-and-check-out",
           },
         ],
       },
@@ -166,14 +176,17 @@ const accordionList = [
           {
             icon: "mdi-circle-outline",
             label: "In/Out",
+            to: "/chek-in-and-check-out",
           },
           {
             icon: "mdi-circle-outline",
             label: "Holidays",
+            to: "/chek-in-and-check-out",
           },
           {
             icon: "mdi-circle-outline",
             label: "Leave Apply",
+            to: "/chek-in-and-check-out",
           },
         ],
       },
@@ -208,5 +221,9 @@ export default defineComponent({
 <style>
 .app-header {
   border-radius: 0.4rem;
+}
+
+.custom-container-padding-top {
+  padding-top: 80px !important ;
 }
 </style>

@@ -23,10 +23,13 @@
               <q-card-section class="q-pa-none q-ma-none">
                 <q-list class="accordion-submenu-list">
                   <q-item
-                    clickable
-                    v-ripple
                     v-for="(item, expansionItemIndex) in expansion.items"
                     :key="expansionItemIndex"
+                    clickable
+                    v-ripple
+                    :to="item.to"
+                    exact
+                    active-class="menu-accordion-active-link"
                   >
                     <q-item-section avatar>
                       <q-icon :name="item.icon" size="0.75rem"></q-icon>
@@ -71,7 +74,10 @@ export default defineComponent({
                 return (
                   typeof subItem === "object" &&
                   "icon" in subItem &&
-                  "label" in subItem
+                  "label" in subItem &&
+                  "to" in subItem &&
+                  (typeof subItem.to === "object" ||
+                    typeof subItem.to === "string")
                 );
               })
             );
@@ -94,12 +100,8 @@ export default defineComponent({
     const isExpanded = (index) => {
       return expandedIndex.value === index;
     };
-    const logger = (...params) => {
-      console.log(...params);
-    };
 
     return {
-      logger,
       showAccordion,
       hideAccordion,
       isExpanded,
@@ -137,5 +139,12 @@ export default defineComponent({
 
 :global(.accordion-active-background-color) {
   background-color: #f8f8f8;
+}
+
+:global(.menu-accordion-active-link) {
+  background: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, 0.7));
+  box-shadow: 0 0 10px 1px rgba(115, 103, 240, 0.7);
+  color: #fff;
+  border-radius: 0.3rem;
 }
 </style>
