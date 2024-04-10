@@ -28,7 +28,7 @@
       <q-item>
         <q-btn
           dense
-          class="full-width logout-button-color reset-line-height"
+          class="full-width logout-button-color reset-line-height logout-btn"
           style="height: 0.75rem"
         >
           <div class="row gap-1 items-center">
@@ -42,3 +42,9 @@
     </q-list>
   </q-menu>
 </template>
+
+<style scoped>
+.logout-btn:hover {
+  box-shadow: 0 8px 25px -8px #e64449;
+}
+</style>

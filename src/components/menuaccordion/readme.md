@@ -34,14 +34,23 @@ We have to pass a structure props to the component from the parent.
             {
               icon: "mdi-circle-outline",
               label: "In & Out",
+              to:{
+                name:'route-name'
+              }
             },
             {
               icon: "mdi-circle-outline",
               label: "Holidays",
+              to:{
+                name:'route-name'
+              }
             },
             {
               icon: "mdi-circle-outline",
               label: "Leave Apply",
+              to:{
+                name:'route-name'
+              }
             },
           ],
         },
