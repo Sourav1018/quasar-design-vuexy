@@ -2,6 +2,7 @@
   <q-btn
     class="meterial-btn-design meterial-btn-background m-btn-text text-capitalize"
     flat
+    @click="handleButtonClick"
     >{{ name }}</q-btn
   >
 </template>
@@ -11,6 +12,19 @@ export default defineComponent({
   name: "GActionButton",
   props: {
     name: { type: String, required: true },
+    action: {
+      type: Function,
+      required: true,
+    },
+  },
+  setup(props, { emit }) {
+    const handleButtonClick = () => {
+      emit("buttonClick", props);
+    };
+
+    return {
+      handleButtonClick,
+    };
   },
 });
 </script>
