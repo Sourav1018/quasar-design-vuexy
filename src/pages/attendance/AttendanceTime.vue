@@ -9,7 +9,7 @@
               v-for="(button, index) in buttons"
               :key="index"
               :action="actions[index]"
-              @buttonClick="actions[index]"
+              @buttonClick="handleButtonClick"
               v-bind="button"
             ></GActionButton>
           </q-card-actions>
@@ -35,14 +35,17 @@ export default defineComponent({
     ]);
 
     const actions = ref([
-      function checkIn(item) {
-        console.log("checkin", item);
+      function checkIn() {
+        console.log("checkin");
       },
-      function checkOut(item) {
-        console.log("checkout", item);
+      function checkOut() {
+        console.log("checkout");
       },
     ]);
-    return { buttons, actions };
+    const handleButtonClick = (action) => {
+      action();
+    };
+    return { buttons, actions, handleButtonClick };
   },
 });
 </script>

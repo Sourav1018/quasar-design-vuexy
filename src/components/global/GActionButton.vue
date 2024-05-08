@@ -19,7 +19,7 @@ export default defineComponent({
   },
   setup(props, { emit }) {
     const handleButtonClick = () => {
-      emit("buttonClick", props);
+      emit("buttonClick", props.action);
     };
 
     return {
